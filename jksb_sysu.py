@@ -44,7 +44,8 @@ def login():
 @retry(wait_random_min=3000, wait_random_max=5000, stop_max_attempt_number=6)
 def jksb():
     print('访问健康申报页面')
-    driver.get("http://jksb.sysu.edu.cn/infoplus/form/JSXNYQSB/start")
+#     driver.get("http://jksb.sysu.edu.cn/infoplus/form/JSXNYQSB/start")
+    driver.get("http://jksb.sysu.edu.cn/infoplus/form/26749147/render")
     time.sleep(20)
     try:
         number = driver.find_element_by_xpath('//*[@id="title_description"]').text
