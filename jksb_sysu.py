@@ -44,9 +44,8 @@ def login():
 @retry(wait_random_min=3000, wait_random_max=5000, stop_max_attempt_number=6)
 def jksb():
     print('访问健康申报页面')
-#     driver.get("http://jksb.sysu.edu.cn/infoplus/form/JSXNYQSB/start")
-    driver.get("http://jksb.sysu.edu.cn/infoplus/form/26749147/render")
-    time.sleep(20)
+    driver.get("http://jksb.sysu.edu.cn/infoplus/form/JSXNYQSB/start")
+    time.sleep(15)
     try:
         number = driver.find_element_by_xpath('//*[@id="title_description"]').text
         print('打开健康申报成功')
@@ -56,14 +55,15 @@ def jksb():
 
     print("点击下一步")
     driver.find_element_by_xpath('//*[@id="form_command_bar"]/li[1]').click()
-    time.sleep(20)
+    time.sleep(15)
 
     print("提交健康申报")
     driver.find_element_by_xpath('//*[@id="form_command_bar"]/li[1]').click()
-    time.sleep(20)
-    result = driver.find_element_by_xpath('//div[8]/div/div[1]/div[2]').text
+    time.sleep(15)
+    # result = driver.find_element_by_xpath('//div[8]/div/div[1]/div[2]').text
     print("完成健康申报")
-    return f'{number}: {result}'
+    # return f'{number}: {result}'
+    return True
 
 if __name__ == "__main__":
     login()
