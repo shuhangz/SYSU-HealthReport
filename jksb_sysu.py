@@ -80,7 +80,7 @@ if __name__ == "__main__":
     except:
         result = '健康申报失败'
         print(result)
-    driver.quit()
+    driver.close()
 
     # 判断是否发送通知
     if bot_token in ['False', '']:
