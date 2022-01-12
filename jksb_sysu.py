@@ -4,10 +4,11 @@ from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
 from util import get_img
 from retrying import retry
+from pygeckodriver import geckodriver_path
 
 # options = webdriver.FirefoxOptions()
 options=Options()
-service = Service(executable_path=f"{os.environ['GITHUB_ACTION_PATH']}\\geckodriver.exe")
+service = Service(executable_path=geckodriver_path)
 # driver = webdriver.Firefox(executable_path=f"{os.environ['GITHUB_ACTION_PATH']}/geckodriver.exe", options=options)
 driver = Firefox(service=service, options=options)
 
