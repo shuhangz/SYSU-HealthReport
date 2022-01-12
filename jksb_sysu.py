@@ -7,7 +7,7 @@ from retrying import retry
 
 # options = webdriver.FirefoxOptions()
 options=Options()
-service = Service(executable_path=f"{os.environ['GITHUB_ACTION_PATH']}/geckodriver.exe")
+service = Service(executable_path=f"{os.environ['GITHUB_ACTION_PATH']}\\geckodriver.exe")
 # driver = webdriver.Firefox(executable_path=f"{os.environ['GITHUB_ACTION_PATH']}/geckodriver.exe", options=options)
 driver = Firefox(service=service, options=options)
 
