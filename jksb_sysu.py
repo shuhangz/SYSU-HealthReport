@@ -1,12 +1,15 @@
 import os, time
-from selenium import webdriver
+from selenium.webdriver import Firefox
+from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.firefox.options import Options
 from util import get_img
 from retrying import retry
 
 # options = webdriver.FirefoxOptions()
+options=Options()
 service = Service(executable_path=f"{os.environ['GITHUB_ACTION_PATH']}/geckodriver.exe")
 # driver = webdriver.Firefox(executable_path=f"{os.environ['GITHUB_ACTION_PATH']}/geckodriver.exe", options=options)
-driver = webdriver.Firefox(service=service)
+driver = Firefox(service=service, options=options)
 
 print("初始化selenium driver完成")
 
