@@ -7,6 +7,8 @@ from retrying import retry
 
 # options = webdriver.FirefoxOptions()
 options=Options()
+options.add_argument("--headless") #设置火狐为headless无界面模式
+options.add_argument("--disable-gpu")
 service = Service(executable_path=f"{os.environ['GITHUB_ACTION_PATH']}\\geckodriver.exe")
 # driver = webdriver.Firefox(executable_path=f"{os.environ['GITHUB_ACTION_PATH']}/geckodriver.exe", options=options)
 driver = Firefox(service=service, options=options)
