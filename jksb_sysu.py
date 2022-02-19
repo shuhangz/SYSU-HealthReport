@@ -70,7 +70,7 @@ def jksb():
     time.sleep(15)
     # result = driver.find_element_by_xpath('//div[8]/div/div[1]/div[2]').text
     print("完成健康申报")
-    print( f'{number}: {result}')
+    print( f'{number}: 号码')
     return True
 
 if __name__ == "__main__":
